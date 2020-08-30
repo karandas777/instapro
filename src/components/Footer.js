@@ -7,8 +7,8 @@ export default class Footer extends Component {
         <div className="container py-4 px-custom">
           <div className="row">
             <div className="col-md-8 p-2">
-              <div className="display-4 mt-3 logo">
-                Post<span className="text-dark">box</span>
+              <div className="display-4 mt-3 pt-1 logo">
+                Insta<span className="text-dark">PRO</span>
               </div>
             </div>
 

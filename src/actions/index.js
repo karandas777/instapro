@@ -100,7 +100,7 @@ export const verifyUser = ({ email, password }, showToast) => async (
 
     if (showToast === true) {
       history.push("/");
-      toast.dark("Welcome to Postbox " + response.data.name);
+      toast.dark("Welcome to InstaPRO " + response.data.name);
     }
   } else {
     // TODO: Make ui to user know this

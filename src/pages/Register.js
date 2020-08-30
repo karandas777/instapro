@@ -34,10 +34,10 @@ export class Register extends Component {
           <div className="dispTableCell">
             <div className="bg-light shadow-sm p-2 rounded-lg">
               <div className="display-1 my-2">
-              <i className="fa fa-instagram"></i>
+              <i className="fa fa-camera-retro"></i>
               </div>
               <div className="h4 logo mb-1">
-                <span className="text-danger">Post</span>box
+                <span className="text-danger">Insta</span>PRO
               </div>
               <form className="px-3 py-2">
                 <div className="row m-0 p-0">

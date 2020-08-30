@@ -27,7 +27,7 @@ export class Title extends Component {
               className="h3 mb-0 mt-1 text-dark text-decoration-none logo"
               to="/"
             >
-              <span className="text-danger">Post</span>box
+              <span className="text-danger">Insta</span>PRO
             </Link>
             <button
               className="btn btn-link navbar-toggler border-0 px-1"

@@ -23,7 +23,7 @@ export class Explore extends Component {
         <div className="container-fluid px-0">
           <div className="container py-5 px-custom min-height">
             <div className="mb-5 text-secondary small px-2">
-              Explore Postbox
+              Explore InstaPRO
             </div>
             <div className="postHolder">
               {PostListInfo.map((post) => (
