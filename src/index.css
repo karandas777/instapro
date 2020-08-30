@@ -1,0 +1,119 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@font-face {
+  font-family: "Insta";
+  src: url(./SCSS/Coco.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+.logo {
+  font-family: "Insta";
+}
+
+.min-height {
+  min-height: 100vh;
+}
+
+.dispTable{
+  display: table;
+}
+
+.dispTableCell{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.px-custom{
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.bg-grad-1 {
+  background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+}
+
+.bg-grad-2 {
+  background-image: linear-gradient(
+    243.4deg,
+    rgba(0, 215, 206, 1) 13%,
+    rgba(0, 132, 255, 1) 98%
+  );
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+}
+
+.mini-profile{
+  height: 40px;
+  width: 40px;
+}
+
+.postHolder{
+  column-count: 3;
+  column-gap: 10px;
+}
+
+.post-img {
+  width: 100%;
+  height:auto;
+}
+
+.autohide{
+  display: none;
+}
+
+.type {
+  text-transform: capitalize;
+}
+
+.ultra-small{
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.suggestions{
+  position: sticky;
+  top: 0px;
+  height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-title {
+    text-align: center;
+  }
+
+  .postHolder{
+    column-count: 1;
+    column-gap: 0px;
+  }
+
+  .px-custom{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .suggestions{
+   display: none;
+  }
+
+  .autohide{
+    display: inline-block;
+    margin-left: 10px;
+  }
+}

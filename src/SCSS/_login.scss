@@ -1,0 +1,51 @@
+.container-fluid {
+  // background: -webkit-linear-gradient(
+  //   to left bottom,
+  //   #f64f59,
+  //   #c471ed,
+  //   #12c2e9
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to left bottom,
+  //   #f64f59,
+  //   #c471ed,
+  //   #12c2e9
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #f0f2f5;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  padding-top: 5rem;
+  &__heading {
+    background: linear-gradient(to left top, #f64f59, #c471ed, #12c2e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 25rem;
+  // height: 25rem;
+  padding: 2rem 1rem;
+}
+
+.form input {
+  margin: 0.5rem auto;
+  padding: 0.2rem;
+}
+
+.form button {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}

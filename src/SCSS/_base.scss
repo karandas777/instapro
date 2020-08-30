@@ -1,0 +1,48 @@
+// RESPOMSIVE BREAKPOINT
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+
+$primary: #f64f59;
+$secondary: #12c2e9;
+$tertiary: #c471ed;
+$bg: #f0f2f5;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-shadow: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  // font-size: 62.5%; // 10px /16px -> 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    // font-size: 50%; // 8px
+  }
+}
+
+@font-face {
+  font-family: "Billabong";
+  font-style: normal;
+  font-weight: normal;
+  src: url(./Billabong.woff);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.App {
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+  font-family: "Billabong";
+}
