@@ -11,26 +11,23 @@ import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
 
 export class Home extends Component {
-  
   componentDidMount() {
     window.scrollTo(0, 0);
     this.funRelogin();
     this.props.allUser();
     this.props.selectPosts();
   }
-  
 
   funRelogin = () => {
     const token = window.localStorage.getItem("token");
-    try{
+    try {
       let decoded = jwtDecode(token);
-      const {email,password} = decoded.data;
-      this.props.verifyUser({ email, password },false);
-    }
-    catch{
-      history.push('/login');
-      toast.error('Something went wrong!');
-      toast.dark('Please login again!')
+      const { email, password } = decoded.data;
+      this.props.verifyUser({ email, password }, false);
+    } catch {
+      history.push("/login");
+      toast.error("Something went wrong!");
+      toast.dark("Please login again!");
     }
   };
 
@@ -57,6 +54,39 @@ export class Home extends Component {
                 {followingListInfo.map((post) => (
                   <ImageCard post={post} key={post._id} />
                 ))}
+                {followingListInfo && followingListInfo.length === 0 ? (
+                  <div className="mt-2">
+                    <div className="h5 px-2 text-muted mb-3">
+                      Follow some users first!
+                    </div>
+                    {suggestionList.reverse().map((user) => (
+                      <div className="p-3" key={user._id}>
+                        <button
+                          onClick={(e) => this.viewProfile(user._id)}
+                          className="btn btn-link text-dark text-decoration-none p-1"
+                        >
+                          <img
+                            src={user.imgurl}
+                            alt="user"
+                            className="bg-grad-1 mr-3 rounded-pill p-1 mb-1"
+                            height="80"
+                            width="80"
+                          />
+                          <span className="h4 logo">
+                            {user.name}
+                            <img
+                              src={require("../assets/verified.png")}
+                              alt="profile-pic"
+                              className="mb-1"
+                              height="30"
+                              width="30"
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </div>
               <div className="col-md-5">
                 <div className="suggestions">
@@ -80,27 +110,28 @@ export class Home extends Component {
                     </div>
 
                     <div className="my-3 text-secondary small px-2">
-                      Suggested users
+                      {followingListInfo.length > 0 ? "Suggested users" : null}
                     </div>
 
                     <div className="mt-3">
-                      {suggestionList.slice(0,6).map((user) => (
-                        <div className="p-1 mb-2 mx-1" key={user._id}>
-                          <button
-                            onClick={(e) => this.viewProfile(user._id)}
-                            className="btn btn-link btn-lg text-dark text-decoration-none p-0"
-                          >
-                            <img
-                              src={user.imgurl}
-                              alt="user"
-                              className="bg-grad-1 mr-2 rounded-pill p-1 mb-1"
-                              height="30"
-                              width="30"
-                            />
-                            {user.name}
-                          </button>
-                        </div>
-                      ))}
+                      {followingListInfo.length > 0 &&
+                        suggestionList.slice(0, 6).map((user) => (
+                          <div className="p-1 mb-2 mx-1" key={user._id}>
+                            <button
+                              onClick={(e) => this.viewProfile(user._id)}
+                              className="btn btn-link btn-lg text-dark text-decoration-none p-0"
+                            >
+                              <img
+                                src={user.imgurl}
+                                alt="user"
+                                className="bg-grad-1 mr-2 rounded-pill p-1 mb-1"
+                                height="30"
+                                width="30"
+                              />
+                              {user.name}
+                            </button>
+                          </div>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -141,7 +172,7 @@ function mapStateToProps(state) {
   return {
     currentUser,
     followingListInfo,
-    suggestionList
+    suggestionList,
   };
 }
 
